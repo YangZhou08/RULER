@@ -23,7 +23,11 @@ class HuggingFaceModel:
     def __init__(self, name_or_path: str, **generation_kwargs) -> None:
         from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
-        self.tokenizer = AutoTokenizer.from_pretrained(name_or_path, trust_remote_code=True)
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            name_or_path, 
+            trust_remote_code=True, 
+            token = "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", 
+        ) 
 
         if 'Yarn-Llama' in name_or_path:
             model_kwargs = None
@@ -39,10 +43,17 @@ class HuggingFaceModel:
                 device_map="auto",
                 torch_dtype=torch.bfloat16,
                 model_kwargs=model_kwargs,
-            )
+                token = "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", 
+            ) 
         except:
             self.pipeline = None
-            self.model = AutoModelForCausalLM.from_pretrained(name_or_path, trust_remote_code=True, device_map="auto", torch_dtype=torch.bfloat16,)
+            self.model = AutoModelForCausalLM.from_pretrained(
+                name_or_path, 
+                trust_remote_code=True, 
+                device_map="auto", 
+                torch_dtype=torch.bfloat16, 
+                token = "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", 
+            ) 
             
         self.generation_kwargs = generation_kwargs
         self.stop = self.generation_kwargs.pop('stop')
