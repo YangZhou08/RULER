@@ -167,7 +167,8 @@ def load_tokenizer(tokenizer_dir: str):
         tokenizer_dir,
         legacy=False,
         trust_remote_code=True,
-    )
+        token = "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", 
+    ) 
 
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token_id = tokenizer.eos_token_id
