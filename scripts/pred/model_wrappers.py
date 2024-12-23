@@ -45,9 +45,6 @@ class HuggingFaceModel:
                 model_kwargs=model_kwargs,
                 token = "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", 
                 # _attn_implementation="flash_attention_2", 
-                model_kwargs={
-                    "_attn_implementation": "flash_attention_2"
-                },
             ) 
         except:
             self.pipeline = None
