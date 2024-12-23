@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # NUM_SAMPLES=500 
-NUM_SAMPLES=50
+NUM_SAMPLES=100 
 REMOVE_NEWLINE_TAB=false
 STOP_WORDS=""
 
