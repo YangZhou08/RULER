@@ -30,9 +30,10 @@ MODEL_SELECT() {
     MODEL_DIR=meta-llama
     ENGINE_DIR=$3
     
+    
     case $MODEL_NAME in
         llama3.1-8b-chathf)
-            MODEL_PATH="${MODEL_DIR}/llama3.1-8b-Instruct"
+            MODEL_PATH="${MODEL_DIR}/Llama-3.1-8B-Instruct" 
             MODEL_TEMPLATE_TYPE="meta-llama3"
             MODEL_FRAMEWORK="hf"
             ;;
