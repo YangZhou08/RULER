@@ -1,1 +1,1 @@
-bash run.sh llama3.1-8b-chat synthetic 
+bash run.sh llama3.1-8b-chathf synthetic 

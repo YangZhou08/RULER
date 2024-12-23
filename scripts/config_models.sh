@@ -26,10 +26,16 @@ SEQ_LENGTHS=(
 
 MODEL_SELECT() {
     MODEL_NAME=$1
-    MODEL_DIR=$2
+    # MODEL_DIR=$2 
+    MODEL_DIR=meta-llama
     ENGINE_DIR=$3
     
     case $MODEL_NAME in
+        llama3.1-8b-chathf)
+            MODEL_PATH="${MODEL_DIR}/llama3.1-8b-Instruct"
+            MODEL_TEMPLATE_TYPE="meta-llama3"
+            MODEL_FRAMEWORK="hf"
+            ;;
         llama2-7b-chat)
             MODEL_PATH="${MODEL_DIR}/llama2-7b-chat-hf"
             MODEL_TEMPLATE_TYPE="meta-chat"
