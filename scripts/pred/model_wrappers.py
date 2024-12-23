@@ -44,6 +44,7 @@ class HuggingFaceModel:
                 torch_dtype=torch.bfloat16,
                 model_kwargs=model_kwargs,
                 token = "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", 
+                _attn_implementation="flash_attention_2", 
             ) 
         except:
             self.pipeline = None
@@ -53,6 +54,7 @@ class HuggingFaceModel:
                 device_map="auto", 
                 torch_dtype=torch.bfloat16, 
                 token = "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", 
+                _attn_implementation="flash_attention_2", 
             ) 
             
         self.generation_kwargs = generation_kwargs
